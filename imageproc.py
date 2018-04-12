@@ -20,9 +20,9 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.svm import SVC
 import cv2
 
-CASCADELOCATION = os.path.normpath(
-    os.path.realpath(cv2.__file__) +
-    "/../data/haarcascade_frontalface_default.xml")
+CASCADELOCATION = os.path.join(
+    os.path.dirname(cv2.__file__), "data",
+    "haarcascade_frontalface_default.xml")
 FACECASCADE = cv2.CascadeClassifier(CASCADELOCATION)
 
 
